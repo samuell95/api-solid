@@ -9,6 +9,7 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - uses: pnpm/action-setup@v2
 
       - uses: actions/setup-node@v3
         with:
@@ -16,5 +17,5 @@ jobs:
           cache: 'pnpm'
 
       - run: pnpm ci
-      
+
       - run: pnpm run test
