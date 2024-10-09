@@ -12,8 +12,9 @@ jobs:
 
       - uses: actions/setup-node@v3
         with:
-          node-version: 18
-          cache: 'npm'
+          node-version: 20
+          cache: 'pnpm'
 
-      - run: npm ci
-      - run: npm run test
+      - run: pnpm ci
+      
+      - run: pnpm run test
