@@ -1,0 +1,48 @@
+@baseUrl = http://localhost:3333
+@authToken = {{ sessions.response.body.token }}
+
+
+###
+# @name create_user
+Post {{baseUrl}}/users
+content-type: application/json
+
+{
+    "name": "samuel santos",
+    "email": "samueADMIN@email.com",
+    "password": "123456"
+}
+
+###
+# @name sessions
+Post {{baseUrl}}/sessions
+content-type: application/json
+
+{
+    "email": "samueADMIN@email.com",
+    "password": "123456"
+}
+
+###
+
+# @name me
+Get {{baseUrl}}/me
+content-type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "email": "samueADMIN@email.com",
+    "password": "123456"
+}
+
+###
+
+# @name create_gym
+POST {{baseUrl}}/gyms
+content-type: application/json
+Authorization: Bearer {{authToken}}
+
+{
+    "email": "samueADMIN@email.com",
+    "password": "123456"
+}
